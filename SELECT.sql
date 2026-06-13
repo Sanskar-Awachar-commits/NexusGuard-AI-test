@@ -1,0 +1,3 @@
+SELECT * FROM users 
+WHERE username = 'USER_INPUT_USERNAME' 
+AND password = 'USER_INPUT_PASSWORD';
