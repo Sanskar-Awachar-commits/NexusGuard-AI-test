@@ -1,11 +1,2 @@
-const ping = require('ping');
-
-function pingHost(targetIp) {
-  const host = ping.sys.probe(targetIp, function(isAlive) {
-    const msg = isAlive ? 'host ' + targetIp + ' is alive' : 'host ' + targetIp + ' is dead';
-    console.log(msg);
-  });
-}
-
-// Example usage:
-pingHost('8.8.8.8');
+{
+  "patched_code": "const { spawn } = require('child_process');\nconst net = require('net');\n\n/**\n * Pings a target IP address or hostname securely.\n * @param {string} targetIp The IP address or hostname to ping.\n * @returns {Promise<{stdout: string, stderr: string}>}
