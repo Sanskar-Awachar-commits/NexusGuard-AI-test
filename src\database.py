@@ -1,8 +1,6 @@
 from sqlalchemy import text
 
-def execute_query(db_session, query, params=None):
-    if params is None:
-        params = {}
-    query_text = text(query)
-    result = db_session.execute(query_text, params)
-    return result
+def execute_query(db_connection, user_id):
+    query = text("SELECT * FROM users WHERE id = :user_id")
+    result = db_connection.execute(query, {'user_id': user_id})
+    return result.fetchall()
