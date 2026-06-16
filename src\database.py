@@ -1,6 +1,2 @@
-from sqlalchemy import text
-
-def execute_query(db_connection, user_id):
-    query = text("SELECT * FROM users WHERE id = :user_id")
-    result = db_connection.execute(query, {'user_id': user_id})
-    return result.fetchall()
+{
+  "patched_code": "from sqlalchemy import create_engine, text\nfrom sqlalchemy.orm import sessionmaker\nfrom sqlalchemy import Column, Integer, String\nfrom sqlalchemy.orm import declarative_base\n\n# --- Assume this setup exists in src\\database.py or is imported ---\n# For demonstration, setting up a minimal in-memory SQLite database\
