@@ -1,0 +1,2 @@
+{
+  "patched_code": "import boto3\nimport os\n\n# AWS credentials should not be hard-coded. boto3 automatically looks for credentials\n# in a specific order: environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY),\n# shared credential file (~/.aws/credentials), IAM roles, etc.\n
