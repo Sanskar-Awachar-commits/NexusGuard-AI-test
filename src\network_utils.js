@@ -1,0 +1,2 @@
+{
+  "patched_code": "const { spawn } = require('child_process');\nconst net = require('net');\n\n/**\n * Pings a target IP address or hostname securely.\n * @param {string} targetIp The IP address or hostname to ping.\n * @returns {Promise<{stdout: string, stderr: string}>}
